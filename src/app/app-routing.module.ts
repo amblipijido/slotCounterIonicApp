@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/drivers/drivers.module').then(m => m.DriversPageModule),
     canActivate: [AuthenticationGuard]
   },
+  { path: 'cars',
+  loadChildren: './pages/cars/cars.module#CarsPageModule',
+  canActivate: [AuthenticationGuard]
+  },
 ];
 
 @NgModule({
