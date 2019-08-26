@@ -1,5 +1,7 @@
 {
   "name": "SlotCounterIonic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
