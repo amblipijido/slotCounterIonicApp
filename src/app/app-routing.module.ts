@@ -18,8 +18,8 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard]
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule),
+    path: 'drivers',
+    loadChildren: () => import('./pages/drivers/drivers.module').then(m => m.DriversPageModule),
     canActivate: [AuthenticationGuard]
   },
 ];

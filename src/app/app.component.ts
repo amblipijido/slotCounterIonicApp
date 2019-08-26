@@ -21,8 +21,8 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
+      title: 'Drivers',
+      url: '/drivers',
       icon: 'list'
     }
   ];
