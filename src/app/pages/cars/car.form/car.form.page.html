@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="'/cars'">
+              <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        <ion-title>
+          Cars
+        </ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="carForm" (ngSubmit)="logForm(carForm)">
+        <ion-item>
+          <ion-label position="floating">Brand</ion-label>
+          <ion-input formControlName="brand" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Model</ion-label>
+          <ion-input formControlName="model"></ion-input>
+        </ion-item>
+          <ion-item>
+              <ion-range formControlName="fuelConsumption" min="10" max="100" color="primary" pin="true">
+                <ion-label slot="start">10</ion-label>
+                <ion-label slot="end">100</ion-label>
+              </ion-range>
+            </ion-item>
+            <ion-item>
+                <ion-label>Gender</ion-label>
+                <ion-select formControlName="group" interface="popover" placeholder="Select One">
+                  <ion-select-option value="f">Female</ion-select-option>
+                  <ion-select-option value="m">Male</ion-select-option>
+                </ion-select>
+              </ion-item>
+        <ion-button 
+        color="primary" 
+        expand="block" 
+        ion-button type="submit"
+        [disabled]="!carForm.valid" 
+        >Add Car</ion-button>
+      </form>
+</ion-content>

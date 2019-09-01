@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: './login/login.module#LoginPageModule'
+    loadChildren: () => import ('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'home',
@@ -22,10 +22,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/drivers/drivers.module').then(m => m.DriversPageModule),
     canActivate: [AuthenticationGuard]
   },
-  { path: 'cars',
-  loadChildren: './pages/cars/cars.module#CarsPageModule',
+  { path: 'cars/form',
+  loadChildren: () => import('./pages/cars/car.form/car.form.module').then(m => m.CarFormPageModule),
   canActivate: [AuthenticationGuard]
   },
+  { path: 'cars', loadChildren: './pages/cars/car-list/car-list.module#CarListPageModule' },
 ];
 
 @NgModule({
