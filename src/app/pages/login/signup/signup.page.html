@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button [routerLink]="'/login'">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <form [formGroup]="signupForm" (ngSubmit)="signupUser(signupForm)">
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input
+          formControlName="email"
+          type="email"
+          placeholder="Your email address"
+          [class.invalid]="!signupForm.controls['email'].valid && signupForm.controls['email'].touched"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item
+        class="error-message"
+        *ngIf="!signupForm.controls['email'].valid
+        && signupForm.controls['email'].touched"
+      >
+        <ion-label>Please enter a valid email.</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Alias</ion-label>
+          <ion-input
+            formControlName="alias"
+            type="text"
+            placeholder="Your alias"
+            [class.invalid]="!signupForm.controls['alias'].valid && signupForm.controls['alias'].touched"
+          >
+          </ion-input>
+        </ion-item>
+        <ion-item
+          class="error-message"
+          *ngIf="!signupForm.controls['alias'].valid
+          && signupForm.controls['alias'].touched"
+        >
+          <ion-label>Please enter a valid alias.</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Name</ion-label>
+            <ion-input
+              formControlName="name"
+              type="text"
+              placeholder="Your Name"
+              [class.invalid]="!signupForm.controls['name'].valid && signupForm.controls['name'].touched"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item
+            class="error-message"
+            *ngIf="!signupForm.controls['name'].valid
+            && signupForm.controls['name'].touched"
+          >
+            <ion-label>Please enter a valid name.</ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Surname</ion-label>
+              <ion-input
+                formControlName="surname"
+                type="text"
+                placeholder="Your Surname"
+                [class.invalid]="!signupForm.controls['surname'].valid && signupForm.controls['surname'].touched"
+              >
+              </ion-input>
+            </ion-item>
+            <ion-item
+              class="error-message"
+              *ngIf="!signupForm.controls['surname'].valid
+              && signupForm.controls['surname'].touched"
+            >
+              <ion-label>Please enter a valid surname.</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Birth Date</ion-label>
+                <ion-datetime formControlName="birthDate" 
+                value="1990-01-01T00:00:00.000"
+                displayFormat="DD/MM/YYYY" 
+                placeholder="Select Date"
+                [class.invalid]="!signupForm.controls['surname'].valid && signupForm.controls['surname'].touched">
+              </ion-datetime>
+              </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input
+          formControlName="password"
+          type="password"
+          placeholder="Your password"
+          [class.invalid]="!signupForm.controls['password'].valid && signupForm.controls['password'].touched"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item
+        class="error-message"
+        *ngIf="!signupForm.controls['password'].valid  &&
+        signupForm.controls['password'].touched"
+      >
+        <ion-label>Your password needs more than 6 characters.</ion-label>
+      </ion-item>
+  
+      <ion-button
+        expand="block"
+        type="submit"
+        ion-button
+        [disabled]="!signupForm.valid">
+        Create an Account
+      </ion-button>
+    </form>
+  </ion-content>

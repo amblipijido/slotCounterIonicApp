@@ -27,6 +27,8 @@ const routes: Routes = [
   canActivate: [AuthenticationGuard]
   },
   { path: 'cars', loadChildren: './pages/cars/car-list/car-list.module#CarListPageModule' },
+  { path: 'reset-password', loadChildren: './pages/login/reset-password/reset-password.module#ResetPasswordPageModule' },
+  { path: 'signup', loadChildren: './pages/login/signup/signup.module#SignupPageModule' },
 ];
 
 @NgModule({

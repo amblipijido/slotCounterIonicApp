@@ -1,8 +1,8 @@
 export interface CarModel {
-    id: number;
+    id?: number;
     brand: string;
     model: string;
     group: string;
     fuelConsumption: number;
-    fuelCapacity: number;
+    ref: string;
 }
