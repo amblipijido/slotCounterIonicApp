@@ -1,17 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <form [formGroup]="userForm" (ngSubmit)="doLoggin(userForm)">
         <ion-item>
-          <ion-label position="stacked">Email</ion-label>
+          <ion-label position="floating">Email</ion-label>
           <ion-input
             formControlName="email"
             type="email"
-            placeholder="Your email address"
             [class.invalid]="!userForm.controls['email'].valid &&
             userForm.controls['email'].touched"
           >
@@ -26,11 +25,10 @@
         </ion-item>
       
         <ion-item>
-          <ion-label position="stacked">Password</ion-label>
+          <ion-label position="floating">Password</ion-label>
           <ion-input
             formControlName="password"
             type="password"
-            placeholder="Your password"
             [class.invalid]="!userForm.controls['password'].valid&& userForm.controls['password'].touched"
           >
           </ion-input>
@@ -48,7 +46,7 @@
           [disabled]="!userForm.valid"
           ion-button type="submit"
         >
-          Log In
+          Submit
         </ion-button>
       </form>
       

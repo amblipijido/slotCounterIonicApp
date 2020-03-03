@@ -12,6 +12,13 @@
 </ion-header>
 
 <ion-content>
+    <img [src]="currentImage" *ngIf="currentImage">
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
     <form [formGroup]="carForm" (ngSubmit)="logForm()">
         <ion-item>
           <ion-label position="floating">Brand</ion-label>
@@ -35,7 +42,7 @@
             <ion-item>
                 <ion-label>Group</ion-label>
                 <ion-select formControlName="group" interface="popover" placeholder="Select One">
-                  <ion-select-option  *ngFor="let group of avalaibleCarGroups" value="groups\{{group.id}}">{{group.name}} </ion-select-option>
+                  <ion-select-option  *ngFor="let group of avalaibleCarGroups" value="groups{{group.id}}">{{group.name}} </ion-select-option>
                 </ion-select>
               </ion-item>
         <ion-button 
