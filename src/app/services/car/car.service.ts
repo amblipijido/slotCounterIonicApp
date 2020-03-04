@@ -3,7 +3,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
-import { CarModel } from '../models/car.model';
+import { CarModel } from '../../models/car.model';
 import { File } from '@ionic-native/file/ngx';
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { DriverModel } from '../models/user.model';
+import { DriverModel } from '../../models/user.model';
 
 @Injectable({
   providedIn: 'root'

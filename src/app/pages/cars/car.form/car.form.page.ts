@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CarModel } from 'src/app/models/car.model';
-import { CarGroupService } from 'src/app/services/car-group.service';
-import { CarService } from 'src/app/services/car.service';
+import { CarGroupService } from 'src/app/services/car/car-group.service';
+import { CarService } from 'src/app/services/car/car.service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ToastController } from '@ionic/angular';
 
